@@ -1,0 +1,85 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+:root {
+  --monospace-font-family: Menlo, monospace;
+  --cell-border-color: rgba(0,0,0,0.15);
+  --cell-border-color-light: rgba(0,0,0,0.1);
+  --focus-cell-border-color: rgba(0,0,0,0.3);
+  --row-alt-background-color: rgba(76,158,217,0.1);
+  --row-hover-background-color: rgba(76,158,217,0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "SF UI Text", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size:12px;
+}
+
+#hex {
+  display: flex;
+  height: 100%;
+}
+
+.hex-view {
+  position: relative;
+  font-family: var(--monospace-font-family);
+  flex:1;
+  display: flex;
+}
+
+.byte-hex-value {
+    display: inline-block;
+    padding: 0.2em;
+}
+
+.byte-hex-value.last {
+    padding-right: 0.6em;
+    border-right: 1px solid var(--cell-border-color-light);
+    margin-right: 0.6em;
+}
+
+.byte-hex-value.last:last-child {
+    margin-right: 0;
+}
+
+.byte-hex-value:first-child {
+    border-left: 1px solid var(--cell-border-color-light);
+    padding-left: 0.6em;
+}
+
+.hex-byte-row.odd {
+    background-color: var(--row-alt-background-color);
+}
+
+.hex-byte-row:hover {
+    background-color: var(--row-hover-background-color);
+}
+
+.hex-byte-row:first-child {
+  border-top:none;
+}
+.hex-byte-row {
+  border-top: 1px solid var(--cell-border-color);
+}
+.hex-byte-address:first-child {
+  border-top:none;
+}
+.hex-byte-address {
+  border:none;
+  border-top: 1px solid transparent;
+}
+.hex-byte-address > span {
+  padding: 0.2em;
+  display:inline-block;
+  color: var(--theme-body-color-inactive);
+}
